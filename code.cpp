@@ -1,17 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
-  int count = 1;
-  int sum = 0;
-  int n = 10;
-
-  while (count <=n){
-    if (count%2 !=0){
-      sum +=1;
+int factorialIterative(int n){
+    int fact =1;
+    
+    for(int i = 1; i<=n; ++i){
+        fact*=i;
     }
-  }
+    return fact;
+}
 
-cout << sum << endl;
+int main(){
+    int number;
+    cout << "Enter a positive integer :" << " ";
+    cin >> number;
+    
+    if(number<0){
+        cout << "Factorial is not defined for negative numbers" << endl;
+    }else{
+        cout << "The factorial number" << " " << number << " = " <<factorialIterative(number) << endl;
+    }
     return 0;
 }
